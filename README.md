@@ -42,3 +42,12 @@ Here is example of the setup for the items on the screenshot:
 define( 'JET_ENGINE_FILL_LISTING_PLACEHOLDER_HTML', '<div class="jet-engine-fill-box" style="height: 24px; margin: 15px 0 10px; width: 50%;"></div><div class="jet-engine-fill-box" style="height: 18px; margin: 5px 0 15px;"></div>' );
 ```
 
+** Custom height **
+As I said before, by default placeholder items stretched by the height of tallest item in the row, so if row has no items, it will be collapsed. What I mean - for example you requested 12 items from the DB and set 3 columns for the listing. So you should to get 4 rows of listing grid items with 3 items in the row. If you have only 5 items to show, by default - 1st row has all 3 items to show, 2nd - has 2 items, placehlolder will be added instead 3rd and placeolder will be stretched by height of the tallest items in the row. Rows 3 and 4 has no items to show, so it will be filled with placeholders, but placeholders will collapce, beacause rows has no visible items. It will be look like this:
+
+![image](https://user-images.githubusercontent.com/4987981/173505433-1955a48e-91cb-402f-a72c-4aeee53e788b.png)
+
+So if you need to show all 12 items, you need to set fixed placeholder height, with `JET_ENGINE_FILL_LISTING_PLACEHOLDER_HEIGHT` constant or fixed height for rows of the placeholder with `JET_ENGINE_FILL_LISTING_PLACEHOLDER_HTML` constant. In this case you'll get something like this:
+
+![image](https://user-images.githubusercontent.com/4987981/173511734-dfdd208d-3119-4134-a793-c23398a7a250.png)
+
