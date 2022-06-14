@@ -1,2 +1,6 @@
-# jet-engine-listing-fill-empty-space
-JetEngine Listing Grid. Allows to add placeholders for missed items if number of items in the Query results is less then requested items number.
+# JetEngine - fill empty space in the Listing grid
+
+This plugin allows to add placeholders for missed Listing Grid items if number of items in the Query results (items to show) is less then the requested items number.
+
+Example:
+
