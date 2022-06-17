@@ -1,9 +1,12 @@
 # JetEngine - fill empty space in the Listing grid
 
-This plugin allows to add placeholders for missed Listing Grid items if number of items in the Query results (items to show) is less then the requested items number.
+This plugin allows to fill empty sapce for missed Listing Grid items if number of items in the Query results (items to show) is less then the requested items number. Works in 2 modes - placeholder and colspan (mode could be set with config)
 
-Example:
+Example of 'placeholder' mode:
 ![image](https://user-images.githubusercontent.com/4987981/173502450-b1f4fa8c-db3e-43b8-ad98-f836423ab8fa.png)
+
+Example of 'colspan' mode:
+![image](https://user-images.githubusercontent.com/4987981/174297286-99bf7105-6ebd-454f-bc3e-fc6a1c41f1ff.png)
 
 Works only with JetEngine Query Builder queries
 
@@ -23,10 +26,11 @@ Configuration example:
 
 **Allowed constants:**
 
-- `JET_ENGINE_FILL_LISTING_FOR_QUERY_ID` - by default 'fill_empty'. Trigger for applying placeholders for listing with this query,
-- `JET_ENGINE_FILL_LISTING_COLOR` - by default '#eee'. Color of the placeholder.
-- `JET_ENGINE_FILL_LISTING_PLACEHOLDER_HTML` - by default `<div class="jet-engine-fill-box"></div>` - HTML markup of the placeholder.
-- `JET_ENGINE_FILL_LISTING_PLACEHOLDER_HEIGHT` - by default `false`. Placeholder height. By default stretches by height of current row. So if you have items in the row, it will be stretched by tallets item, if row is empty - placeholder will be collapced
+- `JET_ENGINE_FILL_LISTING_MODE` - by default 'placeholder'. Defines how emty space will be filled 'placeholder' - adds placeholders instead of missed items, 'colspan' - stretch columns in last visible row
+- `JET_ENGINE_FILL_LISTING_FOR_QUERY_ID` - by default array( 'fill_empty' ). Trigger for applying placeholders for listing with this query. You can replace initial query ID or add more query IDs to process
+- `JET_ENGINE_FILL_LISTING_COLOR` - by default '#eee'. Color of the placeholder. Intended for 'placeholder' mode.
+- `JET_ENGINE_FILL_LISTING_PLACEHOLDER_HTML` - by default `<div class="jet-engine-fill-box"></div>` - HTML markup of the placeholder. Intended for 'placeholder' mode.
+- `JET_ENGINE_FILL_LISTING_PLACEHOLDER_HEIGHT` - by default `false`. Placeholder height. By default stretches by height of current row. So if you have items in the row, it will be stretched by tallets item, if row is empty - placeholder will be collapced. Intended for 'placeholder' mode.
 
 ## Advanced
 
