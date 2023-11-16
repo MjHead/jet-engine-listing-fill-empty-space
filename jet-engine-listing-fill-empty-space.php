@@ -36,7 +36,7 @@ class Jet_Engine_Listing_Fill_Empty_Space {
 	public function setup() {
 
 		if ( ! defined( 'JET_ENGINE_FILL_LISTING_MODE' ) ) {
-			// How to fill emty space - placeholder or colsapn
+			// How to fill empty space - placeholder or colspan
 			define( 'JET_ENGINE_FILL_LISTING_MODE', 'placeholder' );
 		}
 
@@ -88,6 +88,12 @@ class Jet_Engine_Listing_Fill_Empty_Space {
 		if ( $visible_items >= $per_page ) {
 			return $classes;
 		}
+
+		$page = $query->get_current_items_page();
+
+		// Fix fill space for listing with pagination.
+		$offset = ( $page - 1 ) * $per_page;
+		$index  = $index - $offset;
 
 		if ( 1 === $index ) {
 			$this->current_listing = 'jet-colspan-' . rand( 10000, 99999 );
@@ -166,8 +172,13 @@ class Jet_Engine_Listing_Fill_Empty_Space {
 			return;
 		}
 
-		$per_page = $query->get_items_per_page();
+		$per_page      = $query->get_items_per_page();
 		$visible_items = $query->get_items_page_count();
+		$page          = $query->get_current_items_page();
+
+		// Fix adding placeholder for listing with pagination.
+		$offset = ( $page - 1 ) * $per_page;
+		$index  = $index - $offset;
 
 		if ( $visible_items >= $per_page || $visible_items !== $index ) {
 			return;
