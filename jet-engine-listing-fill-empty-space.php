@@ -64,7 +64,7 @@ class Jet_Engine_Listing_Fill_Empty_Space {
 
 	public function handle_colspan_items( $classes, $item, $index, $listing, $is_static ) {
 
-		if ( 'colsapn' !== JET_ENGINE_FILL_LISTING_MODE ) {
+		if ( 'colsapn' !== JET_ENGINE_FILL_LISTING_MODE && 'colspan' !== JET_ENGINE_FILL_LISTING_MODE ) {
 			return $classes;
 		}
 

@@ -16,7 +16,7 @@ Works only with JetEngine Query Builder queries
 - Add `fill_empty` into Query ID option of Query builder (maybe changed with configuration constants):
 ![image](https://user-images.githubusercontent.com/4987981/173502898-1fd847ea-1457-40d3-b18a-3445369cca60.png)
 
-**Note!** If you using Listing Grid in combination with JetSmartFilters, you need to set 'fill_empty' also as listing ID and filter query ID
+**Note!** If you using Listing Grid in combination with JetSmartFilters, you need to set `fill_empty` also as listing ID and filter query ID
 
 Configuration example:
 
