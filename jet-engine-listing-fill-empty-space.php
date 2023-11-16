@@ -3,7 +3,7 @@
  * Plugin Name: JetEngine - fill empty space in the Listing grid
  * Plugin URI:  
  * Description: Fills space for missed items if Listing items to show is less than requested items number. Could work in 2 ways - add placeholder (by default) or span columns in last row.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Author:      Crocoblock
  * Author URI:  https://crocoblock.com/
  * License:     GPL-3.0+
